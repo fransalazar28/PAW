@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PAW.Repositories", "PAW.Rep
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PAW.Architecture", "PAW.Architecture\PAW.Architecture.csproj", "{C0C2421F-9949-4982-82D7-A7838DDD0C7B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PAW.Services", "PAW.Services\PAW.Services.csproj", "{8ABDF81B-1E4A-44C9-86DE-CA5F8D17F7C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{C0C2421F-9949-4982-82D7-A7838DDD0C7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0C2421F-9949-4982-82D7-A7838DDD0C7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0C2421F-9949-4982-82D7-A7838DDD0C7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8ABDF81B-1E4A-44C9-86DE-CA5F8D17F7C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8ABDF81B-1E4A-44C9-86DE-CA5F8D17F7C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8ABDF81B-1E4A-44C9-86DE-CA5F8D17F7C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8ABDF81B-1E4A-44C9-86DE-CA5F8D17F7C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

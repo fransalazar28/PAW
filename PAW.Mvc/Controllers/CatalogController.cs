@@ -2,15 +2,16 @@
 using Microsoft.AspNetCore.Mvc;
 using PAW.Architecture.Providers;
 using PAW.Models;
+using PAW.Services;
 
 namespace PAW.Mvc.Controllers;
 
-public class CatalogController(IRestProvider restProvider) : Controller
+public class CatalogController(ICatalogService catalogservice) : Controller
 {
     public async Task<IActionResult>  Index()
     {
-        var result = await restProvider.GetAsync("https://localhost:7180/Catalog/", "1");
-        var catalog = JsonProvider.DeserializeSimple<Catalog>(result);
-        return View(result);
+        var catalog = await catalogservice.GetCatalogAsync(1);
+      
+        return View("Index", catalog);
     }
 }
