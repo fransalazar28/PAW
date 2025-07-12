@@ -9,6 +9,8 @@ namespace PAW.Services
     {
         Task<Catalog> GetCatalogAsync(int id);
         Task<IEnumerable<Catalog>> GetCatalogsAsync();
+        Task<bool> DeleteCatalogAsync(int id);
+        Task<bool> SaveCatalogAsync(IEnumerable<Catalog> catalogs);
     }
 
     public class CatalogService(IRestProvider restProvider) : ICatalogService
@@ -24,6 +26,21 @@ namespace PAW.Services
             var result = await restProvider.GetAsync("https://localhost:7180/Catalog/", null);
             var catalogs = await JsonProvider.DeserializeAsync<IEnumerable<Catalog>>(result);
             return catalogs;
+        }
+
+        public async Task<bool> DeleteCatalogAsync(int id)
+        {
+            var result = await restProvider.DeleteAsync("https://localhost:7180/Catalog/", $"{id}");
+
+           // var isSaved =  JsonProvider.DeserializeSimple<bool>(result);
+            return true;
+        }
+
+        public async Task<bool> SaveCatalogAsync(IEnumerable<Catalog> catalogs)
+        {
+            var content = JsonProvider.Serialize(catalogs);
+            var result = await restProvider.PostAsync("https://localhost:7180/Catalog/", content);
+            return true;
         }
     }
 }

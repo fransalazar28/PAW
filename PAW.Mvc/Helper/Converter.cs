@@ -1,7 +1,7 @@
 ﻿using PAW.Models;
 using PAW.Mvc.Models;
 
-namespace PAW.Mvc.Helper.Converters 
+namespace PAW.Mvc.Helper.Converters
 {
     public class Converter
     {

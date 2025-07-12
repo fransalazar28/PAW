@@ -1,5 +1,6 @@
 ﻿using PAW.Models;
 using PAW.Repositories;
+using PAW.Core.Extensions;
 
 namespace PAW.Business
 {
@@ -23,6 +24,10 @@ namespace PAW.Business
 
         public async Task<bool> SaveCatalogAsync(Catalog catalog)
         {
+            var user = ""; //Identity
+            catalog.AddAudit(user);
+            catalog.AddLogging(catalog.Identifier <= 0 ? Models.Enums.LoggingType.Create : Models.Enums.LoggingType.Update);
+
             var exists = await repositoryCatalog.ExistsAsync(catalog);
             return await repositoryCatalog.UpsertAsync(catalog, exists);
         }
